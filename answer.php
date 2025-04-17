@@ -30,23 +30,22 @@
       <div class="right-image">
         <img src="./images/dice.gif" alt="dice" />
       </div>
-      <p>Please enter integers for temperature:</p>
-      <br />
-      <form action="answer.php" method="GET">
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="guess" name="guess">
-          <label class="mdl-textfield__label" for="guess"></label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
+      <div class="page-content-php">
+        <div id="user-info">
+          <?php
+          //input
+          $temperatureInFahrenheit = $_GET["temperature"];
+          // process
+          $temperatureInCelsius = ($temperatureInFahrenheit - 32) * 5 / 9;
+          $roundNumber = round($temperatureInCelsius, 3);
+          // output
+          echo "If the temperature in fahrenheit is " . $temperatureInFahrenheit . "°F, then the temperature in celsius is " . $roundNumber . "°C.";
+          ?>
+          <div class="page-content-answer">
+            <a href="./index.php">Return</a>
+          </div>
         </div>
-        <br />
-        <!-- Accent-colored raised button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          type="submit">
-          check guess
-        </button>
-      </form>
-  </div>
-  </main>
+    </main>
   </div>
 </body>
 
