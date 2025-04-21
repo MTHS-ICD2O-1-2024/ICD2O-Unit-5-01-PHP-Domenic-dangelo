@@ -33,13 +33,19 @@
       <div class="page-content-php">
         <div id="user-info">
           <?php
+          $randomNumber = random_int(1, 6);
           //input
-          $temperatureInFahrenheit = $_GET["temperature"];
+          $userNumber = $_GET["guess"];
           // process
-          $temperatureInCelsius = ($temperatureInFahrenheit - 32) * 5 / 9;
-          $roundNumber = round($temperatureInCelsius, 3);
-          // output
-          echo "If the temperature in fahrenheit is " . $temperatureInFahrenheit . "°F, then the temperature in celsius is " . $roundNumber . "°C.";
+          if($userNumber === $randomNumber) {
+            // output
+            echo "The number " . $userNumber . " was the correct number";
+          }
+          // process
+          if($userNumber !== $randomNumber) {
+            // output
+            echo "The number " . $userNumber . " is not the correct number. The correct number is " . $randomNumber;
+          }
           ?>
           <div class="page-content-answer">
             <a href="./index.php">Return</a>
