@@ -30,7 +30,7 @@
       <div class="right-image">
         <img src="./images/dice.gif" alt="dice" />
       </div>
-      <p>Please enter integers for temperature:</p>
+      <p>Pick integer between 1 and 6:</p>
       <br />
       <form action="answer.php" method="GET">
         <div class="mdl-textfield mdl-js-textfield">
