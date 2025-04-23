@@ -37,12 +37,12 @@
           //input
           $userNumber = $_GET["guess"];
           // process
-          if($userNumber === $randomNumber) {
+          if($userNumber == $randomNumber) {
             // output
             echo "The number " . $userNumber . " was the correct number";
           }
           // process
-          if($userNumber !== $randomNumber) {
+          if($userNumber != $randomNumber) {
             // output
             echo "The number " . $userNumber . " is not the correct number. The correct number is " . $randomNumber;
           }
